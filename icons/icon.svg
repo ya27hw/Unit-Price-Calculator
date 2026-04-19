@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Unit price calculator">
+  <rect width="512" height="512" rx="96" fill="#f6d365"/>
+  <path fill="#16725d" d="M88 128c0-30.9 25.1-56 56-56h224c30.9 0 56 25.1 56 56v256c0 30.9-25.1 56-56 56H144c-30.9 0-56-25.1-56-56V128z"/>
+  <path fill="#fffaf0" d="M136 136c0-13.3 10.7-24 24-24h192c13.3 0 24 10.7 24 24v62c0 13.3-10.7 24-24 24H160c-13.3 0-24-10.7-24-24v-62z"/>
+  <path fill="#17211c" d="M168 154h132c8.8 0 16 7.2 16 16s-7.2 16-16 16H168c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
+  <path fill="#d64d35" d="M344 154c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"/>
+  <g fill="#fffaf0">
+    <rect x="136" y="256" width="64" height="48" rx="14"/>
+    <rect x="224" y="256" width="64" height="48" rx="14"/>
+    <rect x="312" y="256" width="64" height="48" rx="14"/>
+    <rect x="136" y="328" width="64" height="48" rx="14"/>
+    <rect x="224" y="328" width="64" height="48" rx="14"/>
+    <rect x="312" y="328" width="64" height="48" rx="14"/>
+  </g>
+  <path fill="#f6d365" d="M136 408h240v24H136z"/>
+</svg>

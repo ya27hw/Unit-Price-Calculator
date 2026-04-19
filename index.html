@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6d365">
+    <meta
+      name="description"
+      content="Compare unit prices across weight, volume, quantity, length, and area."
+    >
+    <title>Unit Price Calculator</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-labelledby="app-title">
+        <div>
+          <p class="eyebrow">Offline PWA</p>
+          <h1 id="app-title">Unit Price Calculator</h1>
+          <p class="intro">
+            Compare groceries, refills, bundles, and bulk packs in any currency.
+          </p>
+        </div>
+        <div class="status-pill" id="install-status">Ready offline</div>
+      </section>
+
+      <section class="controls" aria-label="Comparison settings">
+        <label>
+          Currency
+          <input
+            id="currency"
+            type="text"
+            inputmode="text"
+            value="OMR"
+            autocomplete="off"
+            maxlength="12"
+            aria-describedby="currency-help"
+          >
+          <span id="currency-help">Use any code or symbol, such as USD, OMR, JPY, or $.</span>
+        </label>
+
+        <label>
+          Compare by
+          <select id="measure-type"></select>
+        </label>
+
+        <label>
+          Show price per
+          <select id="display-unit"></select>
+        </label>
+      </section>
+
+      <section class="result-band" aria-live="polite">
+        <div>
+          <p class="eyebrow">Best bang for your buck</p>
+          <h2 id="winner-title">Add item details to compare.</h2>
+        </div>
+        <p id="winner-detail">Prices update as you type.</p>
+      </section>
+
+      <section class="items-header">
+        <h2>Items</h2>
+        <button id="add-item" type="button">Add item</button>
+      </section>
+
+      <form id="items" class="items" aria-label="Items to compare"></form>
+
+      <section class="tips" aria-label="Tips">
+        <h2>Quick tips</h2>
+        <p>
+          For bundles, enter the amount in each pack and the number of packs,
+          such as 200 g and 11 packs.
+        </p>
+      </section>
+    </main>
+
+    <template id="item-template">
+      <article class="item-card">
+        <div class="item-card__top">
+          <label>
+            Name
+            <input class="item-name" type="text" autocomplete="off">
+          </label>
+          <button class="remove-item" type="button" aria-label="Remove item">Remove</button>
+        </div>
+
+        <div class="item-grid">
+          <label>
+            Price
+            <input class="item-price" type="number" min="0" step="0.01" inputmode="decimal">
+          </label>
+
+          <label>
+            Amount per pack
+            <input class="item-amount" type="number" min="0" step="any" inputmode="decimal">
+          </label>
+
+          <label>
+            Packs
+            <input
+              class="item-pack-count"
+              type="number"
+              min="1"
+              step="any"
+              inputmode="decimal"
+              value="1"
+            >
+          </label>
+
+          <label>
+            Unit
+            <select class="item-unit"></select>
+          </label>
+        </div>
+
+        <div class="item-summary">
+          <span class="item-rank">Waiting for details</span>
+          <strong class="item-unit-price">-</strong>
+          <span class="item-breakdown"></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
