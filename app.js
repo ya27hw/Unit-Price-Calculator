@@ -300,17 +300,23 @@ function updateResults() {
 
 function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) {
-    elements.installStatus.textContent = "Works in browser";
+    if (elements.installStatus) {
+      elements.installStatus.textContent = "Works in browser";
+    }
     return;
   }
 
   navigator.serviceWorker
     .register("sw.js")
     .then(() => {
-      elements.installStatus.textContent = "Ready offline";
+      if (elements.installStatus) {
+        elements.installStatus.textContent = "Ready offline";
+      }
     })
     .catch(() => {
-      elements.installStatus.textContent = "Offline after install";
+      if (elements.installStatus) {
+        elements.installStatus.textContent = "Offline after install";
+      }
     });
 }
 

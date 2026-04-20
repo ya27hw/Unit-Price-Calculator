@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f6d365">
+    <meta name="theme-color" content="#0f1216">
     <meta
       name="description"
       content="Compare unit prices across weight, volume, quantity, length, and area."
@@ -16,17 +16,6 @@
   </head>
   <body>
     <main class="app-shell">
-      <section class="topbar" aria-labelledby="app-title">
-        <div>
-          <p class="eyebrow">Offline PWA</p>
-          <h1 id="app-title">Unit Price Calculator</h1>
-          <p class="intro">
-            Compare groceries, refills, bundles, and bulk packs in any currency.
-          </p>
-        </div>
-        <div class="status-pill" id="install-status">Ready offline</div>
-      </section>
-
       <section class="controls" aria-label="Comparison settings">
         <label>
           Currency
@@ -53,28 +42,16 @@
         </label>
       </section>
 
-      <section class="result-band" aria-live="polite">
-        <div>
-          <p class="eyebrow">Best bang for your buck</p>
-          <h2 id="winner-title">Add item details to compare.</h2>
-        </div>
+      <section class="result-panel" aria-live="polite">
+        <h2 id="winner-title">Add item details to compare.</h2>
         <p id="winner-detail">Prices update as you type.</p>
       </section>
 
-      <section class="items-header">
-        <h2>Items</h2>
+      <section class="items-header" aria-label="Item actions">
         <button id="add-item" type="button">Add item</button>
       </section>
 
       <form id="items" class="items" aria-label="Items to compare"></form>
-
-      <section class="tips" aria-label="Tips">
-        <h2>Quick tips</h2>
-        <p>
-          For bundles, enter the amount in each pack and the number of packs,
-          such as 200 g and 11 packs.
-        </p>
-      </section>
     </main>
 
     <template id="item-template">
